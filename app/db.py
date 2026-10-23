@@ -7,7 +7,10 @@ from sqlalchemy.orm import DeclarativeBase, Session, sessionmaker
 
 from app.config import settings
 
+#  sert a se connecter a la base de donner
 engine = create_engine(settings.database_url)
+
+#  garde les objets en mémoire
 SessionLocal = sessionmaker(engine)
 
 
@@ -32,6 +35,7 @@ SessionFactory = Annotated[sessionmaker[Session], Depends(get_session_factory)]
 
 def get_db(factory: SessionFactory) -> Iterator[Session]:
     with factory() as db:
+        # créer une nouvelle ittération
         yield db
 
 
