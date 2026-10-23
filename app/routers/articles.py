@@ -1,7 +1,4 @@
-from datetime import datetime
-
-from fastapi import APIRouter, HTTPException
-
+from fastapi import APIRouter
 from app.db import DbSession
 from app.models.article import Article
 from app.schemas.article import ArticleCreate, ArticlePublic, ArticleUpdate
