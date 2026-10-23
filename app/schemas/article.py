@@ -15,5 +15,6 @@ class ArticleUpdate(ArticleBase):
     publie: bool | None = None
 
 class ArticlePublic(ArticleBase):
+    slug : str
     id : int
     created_at : datetime

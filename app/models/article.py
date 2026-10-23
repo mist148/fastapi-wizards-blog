@@ -6,6 +6,7 @@ from sqlalchemy import Text, String, func, Boolean, false
 class Article(Base):
     __tablename__ = "article"
     id: Mapped[int] = mapped_column(primary_key=True)
+    slug: Mapped[str] = mapped_column(String(255), unique=True)
     titre: Mapped[str] = mapped_column(String(255))
     contenu: Mapped[str] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(server_default=func.now())
